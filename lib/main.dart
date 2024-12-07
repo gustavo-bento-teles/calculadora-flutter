@@ -45,9 +45,11 @@ class _MyAppState extends State<MyApp> {
       case '*':
       case '-':
       case '+':
-        operacao = tecla;
         primeiroNumero = double.parse(numero);
         numero = '0';
+        setState(() {
+          operacao = tecla;
+        });
         break;
 
       case '.':
@@ -78,6 +80,8 @@ class _MyAppState extends State<MyApp> {
             numero = erro;
           } else {
             numero = resultado.toString();
+            operacao = '';
+            primeiroNumero = 0.0;
           }
         });
         break;
@@ -85,6 +89,8 @@ class _MyAppState extends State<MyApp> {
       case 'AC':
         setState(() {
           numero = '0';
+          operacao = '';
+          primeiroNumero = 0.0;
         });
         break;
 
@@ -108,7 +114,17 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Calculadora'),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'Calculadora',
+              ),
+              Text(
+                'Último dígito: ${primeiroNumero.toString()}',
+              ),
+            ],
+          ),
           backgroundColor: Colors.black26,
         ),
         body: Column(
@@ -135,8 +151,14 @@ class _MyAppState extends State<MyApp> {
                     style: TextStyle(fontSize: 30),
                   ),
                 ),
-                const Text(' '),
-                const Text(' '),
+                const Text(
+                  'Operação:',
+                  style: TextStyle(fontSize: 15),
+                ),
+                Text(
+                  operacao,
+                  style: const TextStyle(fontSize: 25),
+                ),
                 GestureDetector(
                   onTap: () {
                     calcular('<-');
