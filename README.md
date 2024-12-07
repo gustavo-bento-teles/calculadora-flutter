@@ -1,16 +1,11 @@
-# myapp
+# Calculadora em Flutter
 
-A new Flutter project.
+## Índice
 
-## Getting Started
+- [Descrição](#descrição)
 
-This project is a starting point for a Flutter application.
+## Descrição
 
-A few resources to get you started if this is your first Flutter project:
+Um projeto simples com todos os conhecimentos que obtive até o momento sobre Flutter com a ajuda de um curso que estou assistindo.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Este projeto está repletamente sujeito a mudanças e melhorias conforme vou aprendendo mais sobre Flutter.**
